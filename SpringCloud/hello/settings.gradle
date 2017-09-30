@@ -1,0 +1,6 @@
+include ":hello-service-api"
+project(':hello-service-api').projectDir = new File('../hello-service-api/')
+
+
+
+
