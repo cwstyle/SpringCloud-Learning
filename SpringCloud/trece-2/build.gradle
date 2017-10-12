@@ -1,0 +1,49 @@
+buildscript {
+	ext {
+		springBootVersion = '1.3.7.RELEASE'
+	}
+	repositories {
+		mavenCentral()
+		maven{ url 'http://maven.aliyun.com/nexus/content/groups/public/'}
+
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+	}
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'spring-boot'
+
+group = 'com.example.trece.two'
+
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = 1.8
+
+repositories {
+	mavenCentral()
+	maven{ url 'http://maven.aliyun.com/nexus/content/groups/public/'}
+
+}
+
+
+ext {
+	springCloudVersion = 'Brixton.SR5'
+}
+
+dependencies {
+	compile('org.springframework.boot:spring-boot-starter-web')
+	compile('org.springframework.cloud:spring-cloud-starter-eureka')
+	compile('org.springframework.cloud:spring-cloud-starter-ribbon')
+	compile('org.springframework.cloud:spring-cloud-starter-sleuth')
+	compile('net.logstash.logback:logstash-logback-encoder')
+}
+
+dependencyManagement {
+	imports {
+		mavenBom "org.springframework.cloud:spring-cloud-dependencies:Brixton.SR5"
+	}
+}
+
+

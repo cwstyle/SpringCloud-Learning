@@ -30,6 +30,18 @@ repositories {
 dependencies {
 	compile('org.springframework.boot:spring-boot-starter-web')
 	compile('org.springframework.cloud:spring-cloud-starter-config')
+	compile('org.springframework.cloud:spring-cloud-starter-eureka')
+
+//自动从试
+	compile('org.springframework.retry:spring-retry')
+	compile('org.springframework.boot:spring-boot-starter-aop')
+//监控
+	compile('org.springframework.boot:spring-boot-starter-actuator')
+//rabbitmq更新config信息
+	compile('org.springframework.cloud:spring-cloud-starter-bus-amqp')
+
+
+
 
 }
 
